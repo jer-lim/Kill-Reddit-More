@@ -11,3 +11,4 @@
 'use strict';
 
 if(document.querySelectorAll("img[src='//www.redditstatic.com/trouble-afoot.jpg']").length > 0) window.location.reload();
+if(document.title = "reddit broke!") window.location.reload();
