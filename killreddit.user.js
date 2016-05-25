@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kill Reddit More
 // @namespace    http://jerl.im
-// @version      1.0
+// @version      1.1
 // @description  Autoreload Reddit when it dies
 // @author       You
 // @match        *.reddit.com/*
