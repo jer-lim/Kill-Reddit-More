@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kill Reddit More
 // @namespace    http://jerl.im
-// @version      1.3.1
+// @version      1.4
 // @description  Autoreload Reddit when it dies
 // @author       You
 // @match        *.reddit.com/*
@@ -10,6 +10,10 @@
 /* jshint -W097 */
 'use strict';
 
-if(document.querySelectorAll("img[src='//www.redditstatic.com/trouble-afoot.jpg']").length > 0) window.location.reload();
-if(document.title == "reddit broke!") window.location.reload();
-else if(document.title == "Ow! -- reddit.com") window.location.reload();
+var reload = false;
+if (document.querySelectorAll("img[src='//www.redditstatic.com/trouble-afoot.jpg']").length > 0) reload = true;
+else if (document.title == "reddit broke!") reload = true;
+else if (document.title == "Ow! -- reddit.com") reload = true;
+else if (document.documentElement.outerText.substr(0, 18) === "connection failure") reload = true;
+
+if (reload) window.location.reload();
